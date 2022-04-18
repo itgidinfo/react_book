@@ -147,9 +147,9 @@ function App() {
   const [b, setB] = useState(0); // определили начальное значение и тип
 
   const formHandler = (event) => {
-	  event.preventDefault();
-	  setA(event.target.elements.num1.value);
-	  setB(event.target.elements.num2.value);
+    event.preventDefault();
+    setA(event.target.elements.num1.value);
+    setB(event.target.elements.num2.value);
   }
 
  return (
