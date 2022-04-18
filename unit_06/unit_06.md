@@ -69,9 +69,9 @@ _Текущий юнит написан на React v18._
 
 ```html
 <form>
-	<input type="number" name="num1">
-	<input type="number" name="num2">
-	<input type="submit" value="Sum">
+  <input type="number" name="num1">
+  <input type="number" name="num2">
+  <input type="submit" value="Sum">
 </form>
 <div class="out"></div>
 ```
@@ -79,13 +79,15 @@ _Текущий юнит написан на React v18._
 
 ```javascript
 document.querySelector('form').addEventListener('submit', function(event){
-	event.preventDefault();
-	// получаем num1
-	let num1 = +event.target.elements.num1.value;
-	// получаем num2
-	let num2 = +event.target.elements.num2.value;
-	// выводим
-	document.querySelector('.out').textContent = num1 + num2;
+  event.preventDefault();
+	
+  // получаем num1
+  let num1 = +event.target.elements.num1.value;
+  // получаем num2
+  let num2 = +event.target.elements.num2.value;
+	
+  // выводим
+  document.querySelector('.out').textContent = num1 + num2;
 });
 ```
 Скачать и запустить код (unit_06_code_01). Обратите внимание на важный момент — нам все равно что лежит в ``out``. Даже начальное значение не прописано. Мы об этом не заботимся. Блок ``out`` никак не связан с формой — эту связь контролируем мы, через код.
@@ -100,21 +102,23 @@ document.querySelector('form').addEventListener('submit', function(event){
 function App() {
 
 const formHandler = (event) => {
-	event.preventDefault();
-	let num1 = +document.querySelector('.num1').value;
-	let num2 = +document.querySelector('.num2').value;
-	document.querySelector('.out').innerHTML = num1 + num2;
+  event.preventDefault();
+	
+  let num1 = +document.querySelector('.num1').value;
+  let num2 = +document.querySelector('.num2').value;
+	
+  document.querySelector('.out').innerHTML = num1 + num2;
 }
 
 return (
-<div className="App">
-	<form onSubmit={formHandler}>
-		<input type="number" className ="num1" />
-		<input type="number" className ="num2" />
-		<input type="submit" value = "Sum" />
-	</form>
-	<div className ="out"></div>
-</div>
+  <div className="App">
+    <form onSubmit={formHandler}>
+      <input type="number" className ="num1" />
+      <input type="number" className ="num2" />
+      <input type="submit" value = "Sum" />
+    </form>
+    <div className ="out"></div>
+  </div>
 );
 }
 ```
@@ -130,8 +134,8 @@ return (
 ```javascript
 function App() {
 
-	const [a, setA] = useState(0); // определили начальное значение и тип
-	const [b, setB] = useState(0); // определили начальное значение и тип
+  const [a, setA] = useState(0); // определили начальное значение и тип
+  const [b, setB] = useState(0); // определили начальное значение и тип
 ```
 
 этих данных достаточно чтобы полностью описать состояние компонента. Теперь добавим код:
@@ -139,25 +143,25 @@ function App() {
 ```javascript
 function App() {
 
-	const [a, setA] = useState(0); // определили начальное значение и тип
-	const [b, setB] = useState(0); // определили начальное значение и тип
+  const [a, setA] = useState(0); // определили начальное значение и тип
+  const [b, setB] = useState(0); // определили начальное значение и тип
 
-	const formHandler = (event) => {
-		event.preventDefault();
-		setA(event.target.elements.num1.value);
-		setB(event.target.elements.num2.value);
-	}
+  const formHandler = (event) => {
+	  event.preventDefault();
+	  setA(event.target.elements.num1.value);
+	  setB(event.target.elements.num2.value);
+  }
 
-	return (
-	<div className="App">
-		<form onSubmit={formHandler}>
-			<input type="number" name ="num1" defaultValue={a}/>
-			<input type="number" name ="num2" defaultValue={b} />
-			<input type="submit" value = "Sum" />
-		</form>
-		<div className ="out">{a + b}</div>
-	</div>
-	);
+ return (
+  <div className="App">
+    <form onSubmit={formHandler}>
+        <input type="number" name ="num1" defaultValue={a}/>
+        <input type="number" name ="num2" defaultValue={b} />
+        <input type="submit" value = "Sum" />
+    </form>
+    <div className ="out">{a + b}</div>
+  </div>
+ );
 }
 ```
 
