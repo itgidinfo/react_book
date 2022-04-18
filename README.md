@@ -28,6 +28,7 @@
 - [Unit 03. JSX. Синтаксис. Практические кейсы применения](./unit_03/unit_03.md)
 - [Unit 04. Передача данных в компонент. Props](./unit_04/unit_04.md)
 - [Unit 05. State](./unit_05/unit_05.md)
+- [Unit 06. Почему getElementById и querySelector в React - плохо](./unit_06/unit_06.md)
 
 ## Ответственность
 
