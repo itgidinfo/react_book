@@ -30,7 +30,8 @@
 - [Unit 05. State](./unit_05/unit_05.md)
 - [Unit 06. Почему getElementById и querySelector в React - плохо](./unit_06/unit_06.md)
 - [Unit 07. Ref – зачем и как?](./unit_07/unit_07.md)
-
+- [Unit 08. Redux – все не так сложно!](./unit_08/unit_08.md)
+- 
 ## Ответственность
 
 - Курс находится в разработке. Материалы дополняются и изменяются каждый день.
